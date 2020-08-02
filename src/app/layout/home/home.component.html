@@ -1,1 +1,26 @@
-<p>home works!</p>
+<app-header></app-header>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="text-center mb-4">
+        <h1 class="">Gif Trending</h1>
+        <img src="./assets/images/pwa-con-angular.png" width="200" alt="">
+      </div>      
+      <div class="row">
+        <div class="col-12 col-sm-6 col-xl-3 mb-3" *ngFor="let trend of trending">
+          <div class="card">
+            <img class="card-img-top" src="{{trend.url}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{trend.title}}</h5>              
+            </div>
+          </div>
+        </div>        
+      </div>
+      
+      
+    </div>
+  </div>
+    
+</div>
+

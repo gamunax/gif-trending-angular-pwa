@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TrendingService } from 'src/app/services/trending.service';
+import { TrendingService } from '../../core/services/trending.service';
+import { Trending } from '../../core/interfaces/trending';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,7 @@ import { TrendingService } from 'src/app/services/trending.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  trending: Trending;
 
   constructor(
     private trendingService: TrendingService
@@ -14,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.trendingService.getGifTrending().subscribe(res => {
-      console.log(res);
+      this.trending = res;
     });
   }
 
