@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "usuarios-pwa": {
+    "gif-pwa": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/usuarios-pwa",
+            "outputPath": "dist/gif-pwa",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,7 +25,8 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -60,25 +61,27 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "usuarios-pwa:build"
+            "browserTarget": "gif-pwa:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "usuarios-pwa:build:production"
+              "browserTarget": "gif-pwa:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "usuarios-pwa:build"
+            "browserTarget": "gif-pwa:build"
           }
         },
         "test": {
@@ -90,7 +93,8 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.scss"
@@ -115,15 +119,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "usuarios-pwa:serve"
+            "devServerTarget": "gif-pwa:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "usuarios-pwa:serve:production"
+              "devServerTarget": "gif-pwa:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "usuarios-pwa"
+  "defaultProject": "gif-pwa"
 }
