@@ -25,5 +25,18 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "api",
+      "urls": ["https://api.giphy.com/v1/gifs/trending/**"],
+      "cacheConfig": {
+        "maxSize": 3,
+        "maxAge": "5m",
+        "strategy": "freshness",
+        "timeout": "2s"
+      }
+    }
+
   ]
 }
